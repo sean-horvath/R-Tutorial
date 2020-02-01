@@ -1,17 +1,93 @@
----
-title: "R Markdown Example"
-author: "Sean Horvath"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  github_document
-subtitle: Solar Radiation
----
+R Markdown Example
+================
+Sean Horvath
+01 February, 2020
 
 See appendix for source code.
-```{r echo=FALSE}
+
+**Problem 1**  
+**a)** Code Output:
+
+    ## [1] 1322.257 1414.052
+
+    ## [1] 0.967269 1.034420
+
+The range of the effective solar constant is 1322-1414
+\(\frac{W}{m^{2}}\)  
+Or as a percentage of the true solar constant: 0.97%-1.03%
+
+**b)** Code Output:
+
+    ## [1] "Maximum: January 03"
+
+    ## [1] "Minimum: July 04"
+
+The dates that maximum and minimum occur are January 3 and July 4,
+repectively.
+
+**Problem 2**  
+Values in Degrees
+
+|                     |  Dec. 21 |   Feb. 5 |  Mar. 21 | June 21 |
+| ------------------- | -------: | -------: | -------: | ------: |
+| Honolulu, HI (21 N) | 44.49931 | 37.38514 | 21.33713 |     2.5 |
+| Boulder, CO (40 N)  | 63.49931 | 56.38514 | 40.33713 |    16.5 |
+| Oslo, Norway (60 N) | 83.49931 | 76.38514 | 60.33713 |    36.5 |
+| Barrow, AK (71 N)   | 94.49931 | 87.38514 | 71.33713 |    47.5 |
+
+**Problem 3**  
+Values in \(\frac{W}{m^{2}}\)
+
+|                     |    Dec. 21 |    Feb. 5 |   Mar. 21 |   June 21 |
+| ------------------- | ---------: | --------: | --------: | --------: |
+| Honolulu, HI (21 N) |  1007.7861 | 1117.4150 | 1283.4361 | 1322.1040 |
+| Boulder, CO (40 N)  |   630.4622 |  778.5440 | 1050.2893 | 1268.8671 |
+| Oslo, Norway (60 N) |   159.9652 |  331.0372 |  681.9078 | 1063.7949 |
+| Barrow, AK (71 N)   | \-110.8405 |   64.1587 |  440.9210 |  894.0515 |
+
+**Problem 4**  
+Day length in hours.  
+Daily averaged solar insolation in
+\(\frac{W}{m^{2}}\)
+
+|                                     |    Dec. 21 |     Feb. 5 |   Mar. 21 |   June 21 |
+| ----------------------------------- | ---------: | ---------: | --------: | --------: |
+| Honolulu, HI (21 N) day length      |  10.718957 |  11.135902 |  11.98274 |  13.28109 |
+| Honolulu, HI (21 N) daily avg solar | 289.394424 | 332.311254 | 407.88202 | 460.09587 |
+| Boulder, CO (40 N) day length       |   9.146977 |  10.095501 |  11.96228 |  14.85312 |
+| Boulder, CO (40 N) daily avg solar  | 156.109754 | 211.489137 | 333.27540 | 485.30024 |
+| Oslo, Norway (60 N) day length      |   5.485471 |   7.917862 |  11.92214 |  18.51482 |
+| Oslo, Norway (60 N) daily avg solar |  24.153998 |  71.431833 | 215.72941 | 479.47611 |
+| Barrow, AK (71 N) day length        |   0.000000 |   4.180992 |  11.86944 |  24.00000 |
+| Barrow, AK (71 N) daily avg solar   |   0.000000 |   7.411498 | 138.93615 | 498.79207 |
+
+**Problem 5**  
+![](Notebook-Example_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+Latitude is the culprit here, driving the differences in diurnal cycles
+of these two locations. Because the latitude of Barrow is above
+66.5\(^\circ\) it experiences 24-hours of sunlight during parts of the
+summer (such as on June 21). This is why the radiation flux never drops
+to 0. Boulder on the other hand still experiences night, so there are
+times in the early morning and late night when the radiation flux
+becomes 0.
+
+The intensity of radiation is greater at noon in Boulder because of
+latitude as well. On June 21 the sun is directly overhead at noon at
+23.5\(^\circ\) north. Because Boulder’s latitude is closer to that than
+Barrow, radiation from the sun is coming in at less of an angle,
+resulting in the higher flux. Finally, the slope of radiation flux is
+smaller for Barrow because the angle of the sun doesn’t change as much
+throughout the day compared to
+Boulder.
+
+#### Code Appendix
+
+``` r
+## ----echo=FALSE----------------------------------------------------------
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE)
-```
-```{r message=FALSE}
+
+## ----message=FALSE-------------------------------------------------------
 # Load libraries:
 library(knitr);library(reshape2);library(dplyr);library(ggplot2)
 # Create function to calculate all TOA variables:
@@ -62,11 +138,9 @@ toa_radiation <- function(year,month,day,hour,lat){
   return_dataframe$I <- 1367*(149000000/return_dataframe$r)^2*cos(return_dataframe$Z*pi/180)
   return(return_dataframe)
 }
-```
 
-**Problem 1**  
-**a)** Code Output:
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 1a)
 doy <- data.frame(month=c(rep(1,31),rep(2,28),rep(3,31),rep(4,30),
                             rep(5,31),rep(6,30),rep(7,31),rep(8,31),
@@ -80,12 +154,9 @@ doy <- data.frame(month=c(rep(1,31),rep(2,28),rep(3,31),rep(4,30),
   }
   print(range(doy$Seff))
   print(range(doy$Seff)/1367)
-```
-The range of the effective solar constant is 1322-1414 $\frac{W}{m^{2}}$  
-Or as a percentage of the true solar constant: 0.97%-1.03%  
 
-**b)** Code Output:
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 1b)
 print(paste0('Maximum: ',format(as.Date(paste0('2001-',
                                              doy$month[which.max(doy$Seff)],'-',
@@ -95,12 +166,9 @@ print(paste0('Minimum: ',format(as.Date(paste0('2001-',
                                                doy$month[which.min(doy$Seff)],
                                             '-',doy$day[which.min(doy$Seff)])),
                                 "%B %d"))) 
-```
-The dates that maximum and minimum occur are January 3 and July 4, repectively.  
 
-**Problem 2**  
-Values in Degrees
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 2)
 Z_dates <- c('12-21','02-05','03-21','06-21')
 Z_lats <- c(21,40,60,71)
@@ -120,11 +188,9 @@ rownames(Z_df) <- c('Honolulu, HI (21 N)',
                     'Barrow, AK (71 N)')
 colnames(Z_df) <- c('Dec. 21','Feb. 5','Mar. 21','June 21')
 knitr::kable(Z_df)
-```
 
-**Problem 3**  
-Values in $\frac{W}{m^{2}}$
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 3)
 I_dates <- c('12-21','02-05','03-21','06-21')
 I_lats <- c(21,40,60,71)
@@ -144,12 +210,9 @@ rownames(I_df) <- c('Honolulu, HI (21 N)',
                     'Barrow, AK (71 N)')
 colnames(I_df) <- c('Dec. 21','Feb. 5','Mar. 21','June 21')
 kable(I_df)
-```
 
-**Problem 4**  
-Day length in hours.  
-Daily averaged solar insolation in $\frac{W}{m^{2}}$
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 4)
 I_dates <- c('12-21','02-05','03-21','06-21')
 I_lats <- c(21,40,60,71)
@@ -183,10 +246,9 @@ rownames(combined_df) <- c('Honolulu, HI (21 N) day length',
                            'Barrow, AK (71 N) day length',
                            'Barrow, AK (71 N) daily avg solar')
 kable(combined_df)
-```
 
-**Problem 5**  
-```{r}
+
+## ------------------------------------------------------------------------
 # Problem 5)
 diurnal_I <- data.frame(Hour=rep(seq(0,24),2),
                         Insolation=rep(NA,50),
@@ -205,17 +267,8 @@ ggplot(diurnal_I,aes(x=Hour,y=Insolation,color=City)) +
   geom_line(aes(group=City)) +
   ylab(expression(paste('Hourly Solar Insolation, ',over(W,m^2)))) +
   ggtitle('Diurnal Cycle of Incoming Solar Radiation')
+
+
+## ----code = readLines(knitr::purl("C:/Users/seanm/Desktop/R-Tutorial/Notebook Example.Rmd", documentation = 1)), echo = T, eval = F----
+## NA
 ```
-
-Latitude is the culprit here, driving the differences in diurnal cycles of these two locations. Because the latitude of Barrow is above 66.5$^\circ$ it experiences 24-hours of sunlight during parts of the summer (such as on June 21). This is why the radiation flux never drops to 0. Boulder on the other hand still experiences night, so there are times in the early morning and late night when the radiation flux becomes 0.  
-
-The intensity of radiation is greater at noon in Boulder because of latitude as well. On June 21 the sun is directly overhead at noon at 23.5$^\circ$ north. Because Boulder's latitude is closer to that than Barrow, radiation from the sun is coming in at less of an angle, resulting in the higher flux. Finally, the slope of radiation flux is smaller for Barrow because the angle of the sun doesn't change as much throughout the day compared to Boulder.  
-
-
-#### Code Appendix
-```{r code = readLines(knitr::purl("C:/Users/seanm/Desktop/R-Tutorial/Notebook Example.Rmd", documentation = 1)), echo = T, eval = F}
-```
-
-
-
-

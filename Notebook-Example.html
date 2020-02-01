@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 id="r-markdown-example">R Markdown Example</h1>
+<p>Sean Horvath 01 February, 2020</p>
+<p>See appendix for source code.</p>
+<p><strong>Problem 1</strong><br />
+<strong>a)</strong> Code Output:</p>
+<pre><code>## [1] 1322.257 1414.052
+
+## [1] 0.967269 1.034420
+</code></pre>
+<p>The range of the effective solar constant is 1322-1414 (\frac{W}{m^{2}})<br />
+Or as a percentage of the true solar constant: 0.97%-1.03%</p>
+<p><strong>b)</strong> Code Output:</p>
+<pre><code>## [1] &quot;Maximum: January 03&quot;
+
+## [1] &quot;Minimum: July 04&quot;
+</code></pre>
+<p>The dates that maximum and minimum occur are January 3 and July 4, repectively.</p>
+<p><strong>Problem 2</strong><br />
+Values in Degrees</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Dec. 21</th>
+<th align="right">Feb. 5</th>
+<th align="right">Mar. 21</th>
+<th align="right">June 21</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Honolulu, HI (21 N)</td>
+<td align="right">44.49931</td>
+<td align="right">37.38514</td>
+<td align="right">21.33713</td>
+<td align="right">2.5</td>
+</tr>
+<tr class="even">
+<td>Boulder, CO (40 N)</td>
+<td align="right">63.49931</td>
+<td align="right">56.38514</td>
+<td align="right">40.33713</td>
+<td align="right">16.5</td>
+</tr>
+<tr class="odd">
+<td>Oslo, Norway (60 N)</td>
+<td align="right">83.49931</td>
+<td align="right">76.38514</td>
+<td align="right">60.33713</td>
+<td align="right">36.5</td>
+</tr>
+<tr class="even">
+<td>Barrow, AK (71 N)</td>
+<td align="right">94.49931</td>
+<td align="right">87.38514</td>
+<td align="right">71.33713</td>
+<td align="right">47.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Problem 3</strong><br />
+Values in (\frac{W}{m^{2}})</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Dec. 21</th>
+<th align="right">Feb. 5</th>
+<th align="right">Mar. 21</th>
+<th align="right">June 21</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Honolulu, HI (21 N)</td>
+<td align="right">1007.7861</td>
+<td align="right">1117.4150</td>
+<td align="right">1283.4361</td>
+<td align="right">1322.1040</td>
+</tr>
+<tr class="even">
+<td>Boulder, CO (40 N)</td>
+<td align="right">630.4622</td>
+<td align="right">778.5440</td>
+<td align="right">1050.2893</td>
+<td align="right">1268.8671</td>
+</tr>
+<tr class="odd">
+<td>Oslo, Norway (60 N)</td>
+<td align="right">159.9652</td>
+<td align="right">331.0372</td>
+<td align="right">681.9078</td>
+<td align="right">1063.7949</td>
+</tr>
+<tr class="even">
+<td>Barrow, AK (71 N)</td>
+<td align="right">-110.8405</td>
+<td align="right">64.1587</td>
+<td align="right">440.9210</td>
+<td align="right">894.0515</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Problem 4</strong><br />
+Day length in hours.<br />
+Daily averaged solar insolation in (\frac{W}{m^{2}})</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Dec. 21</th>
+<th align="right">Feb. 5</th>
+<th align="right">Mar. 21</th>
+<th align="right">June 21</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Honolulu, HI (21 N) day length</td>
+<td align="right">10.718957</td>
+<td align="right">11.135902</td>
+<td align="right">11.98274</td>
+<td align="right">13.28109</td>
+</tr>
+<tr class="even">
+<td>Honolulu, HI (21 N) daily avg solar</td>
+<td align="right">289.394424</td>
+<td align="right">332.311254</td>
+<td align="right">407.88202</td>
+<td align="right">460.09587</td>
+</tr>
+<tr class="odd">
+<td>Boulder, CO (40 N) day length</td>
+<td align="right">9.146977</td>
+<td align="right">10.095501</td>
+<td align="right">11.96228</td>
+<td align="right">14.85312</td>
+</tr>
+<tr class="even">
+<td>Boulder, CO (40 N) daily avg solar</td>
+<td align="right">156.109754</td>
+<td align="right">211.489137</td>
+<td align="right">333.27540</td>
+<td align="right">485.30024</td>
+</tr>
+<tr class="odd">
+<td>Oslo, Norway (60 N) day length</td>
+<td align="right">5.485471</td>
+<td align="right">7.917862</td>
+<td align="right">11.92214</td>
+<td align="right">18.51482</td>
+</tr>
+<tr class="even">
+<td>Oslo, Norway (60 N) daily avg solar</td>
+<td align="right">24.153998</td>
+<td align="right">71.431833</td>
+<td align="right">215.72941</td>
+<td align="right">479.47611</td>
+</tr>
+<tr class="odd">
+<td>Barrow, AK (71 N) day length</td>
+<td align="right">0.000000</td>
+<td align="right">4.180992</td>
+<td align="right">11.86944</td>
+<td align="right">24.00000</td>
+</tr>
+<tr class="even">
+<td>Barrow, AK (71 N) daily avg solar</td>
+<td align="right">0.000000</td>
+<td align="right">7.411498</td>
+<td align="right">138.93615</td>
+<td align="right">498.79207</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Problem 5</strong><br />
+<img src="data:image/png;base64,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" /><!-- --></p>
+<p>Latitude is the culprit here, driving the differences in diurnal cycles of these two locations. Because the latitude of Barrow is above 66.5(^\circ) it experiences 24-hours of sunlight during parts of the summer (such as on June 21). This is why the radiation flux never drops to 0. Boulder on the other hand still experiences night, so there are times in the early morning and late night when the radiation flux becomes 0.</p>
+<p>The intensity of radiation is greater at noon in Boulder because of latitude as well. On June 21 the sun is directly overhead at noon at 23.5(^\circ) north. Because Boulder’s latitude is closer to that than Barrow, radiation from the sun is coming in at less of an angle, resulting in the higher flux. Finally, the slope of radiation flux is smaller for Barrow because the angle of the sun doesn’t change as much throughout the day compared to Boulder.</p>
+<h4 id="code-appendix">Code Appendix</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="co">## ----echo=FALSE----------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-2" title="2">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">echo=</span><span class="ot">FALSE</span>, <span class="dt">warning=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb3-3" title="3"></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">## ----message=FALSE-------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co"># Load libraries:</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="kw">library</span>(knitr);<span class="kw">library</span>(reshape2);<span class="kw">library</span>(dplyr);<span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co"># Create function to calculate all TOA variables:</span></a>
+<a class="sourceLine" id="cb3-8" title="8">toa_radiation &lt;-<span class="st"> </span><span class="cf">function</span>(year,month,day,hour,lat){</a>
+<a class="sourceLine" id="cb3-9" title="9">  return_dataframe &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">declination=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-10" title="10">  <span class="dt">Z=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-11" title="11">  <span class="dt">Hs=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-12" title="12">  <span class="dt">r=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-13" title="13">  <span class="dt">Seff=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-14" title="14">  <span class="dt">I_day=</span><span class="ot">NA</span>,</a>
+<a class="sourceLine" id="cb3-15" title="15">  <span class="dt">I=</span><span class="ot">NA</span>)</a>
+<a class="sourceLine" id="cb3-16" title="16">  <span class="co"># Declination</span></a>
+<a class="sourceLine" id="cb3-17" title="17">  day_of_interest &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year,<span class="st">&#39;-&#39;</span>,month,<span class="st">&#39;-&#39;</span>,day))</a>
+<a class="sourceLine" id="cb3-18" title="18">  reference_day &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year,<span class="st">&#39;-06-21&#39;</span>))</a>
+<a class="sourceLine" id="cb3-19" title="19">  n &lt;-<span class="st"> </span>day_of_interest<span class="op">-</span>reference_day</a>
+<a class="sourceLine" id="cb3-20" title="20">  <span class="cf">if</span>(n<span class="op">&lt;</span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb3-21" title="21">  reference_day &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year<span class="dv">-1</span>,<span class="st">&#39;-06-21&#39;</span>))</a>
+<a class="sourceLine" id="cb3-22" title="22">  n &lt;-<span class="st"> </span>day_of_interest<span class="op">-</span>reference_day</a>
+<a class="sourceLine" id="cb3-23" title="23">  }</a>
+<a class="sourceLine" id="cb3-24" title="24">  return_dataframe<span class="op">$</span>declination &lt;-<span class="st"> </span><span class="fl">23.5</span><span class="op">*</span><span class="kw">cos</span>(<span class="fl">0.986</span><span class="op">*</span><span class="kw">as.numeric</span>(n)<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)</a>
+<a class="sourceLine" id="cb3-25" title="25">  <span class="co"># Z</span></a>
+<a class="sourceLine" id="cb3-26" title="26">  lat &lt;-<span class="st"> </span>lat<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span></a>
+<a class="sourceLine" id="cb3-27" title="27">  return_dataframe<span class="op">$</span>Z &lt;-<span class="st"> </span><span class="kw">acos</span>(<span class="kw">sin</span>(lat)<span class="op">*</span><span class="kw">sin</span>(return_dataframe<span class="op">$</span>declination<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)<span class="op">+</span><span class="kw">cos</span>(lat)<span class="op">*</span><span class="kw">cos</span>(return_dataframe<span class="op">$</span>declination<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)<span class="op">*</span><span class="kw">cos</span>((<span class="dv">15</span><span class="op">*</span>(hour<span class="dv">-12</span>))<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>))<span class="op">*</span><span class="dv">180</span><span class="op">/</span>pi</a>
+<a class="sourceLine" id="cb3-28" title="28">  <span class="co"># Hs</span></a>
+<a class="sourceLine" id="cb3-29" title="29">  temp &lt;-<span class="st"> </span><span class="op">-</span><span class="kw">tan</span>(lat)<span class="op">*</span><span class="kw">tan</span>(return_dataframe<span class="op">$</span>declination<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)</a>
+<a class="sourceLine" id="cb3-30" title="30">  <span class="cf">if</span>(temp<span class="op">&gt;</span><span class="dv">1</span>){</a>
+<a class="sourceLine" id="cb3-31" title="31">    temp=<span class="dv">1</span></a>
+<a class="sourceLine" id="cb3-32" title="32">  } <span class="cf">else</span> <span class="cf">if</span>(temp<span class="op">&lt;</span>(<span class="op">-</span><span class="dv">1</span>)){</a>
+<a class="sourceLine" id="cb3-33" title="33">      temp=<span class="op">-</span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb3-34" title="34">  }</a>
+<a class="sourceLine" id="cb3-35" title="35">  Hs_value &lt;-<span class="st"> </span><span class="kw">acos</span>(temp)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>pi</a>
+<a class="sourceLine" id="cb3-36" title="36">  return_dataframe<span class="op">$</span>Hs &lt;-<span class="st"> </span>Hs_value</a>
+<a class="sourceLine" id="cb3-37" title="37">  <span class="co"># r</span></a>
+<a class="sourceLine" id="cb3-38" title="38">  day_of_interest &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year,<span class="st">&#39;-&#39;</span>,month,<span class="st">&#39;-&#39;</span>,day))</a>
+<a class="sourceLine" id="cb3-39" title="39">  reference_day &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year,<span class="st">&#39;-07-04&#39;</span>))</a>
+<a class="sourceLine" id="cb3-40" title="40">  n &lt;-<span class="st"> </span>day_of_interest<span class="op">-</span>reference_day</a>
+<a class="sourceLine" id="cb3-41" title="41">  <span class="cf">if</span>(n<span class="op">&lt;</span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb3-42" title="42">  reference_day &lt;-<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">paste0</span>(year<span class="dv">-1</span>,<span class="st">&#39;-07-04&#39;</span>))</a>
+<a class="sourceLine" id="cb3-43" title="43">  n &lt;-<span class="st"> </span>day_of_interest<span class="op">-</span>reference_day</a>
+<a class="sourceLine" id="cb3-44" title="44">  }</a>
+<a class="sourceLine" id="cb3-45" title="45">  r_value &lt;-<span class="st"> </span><span class="dv">149</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span><span class="fl">+2.5</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span><span class="op">*</span><span class="kw">cos</span>(<span class="fl">0.986</span><span class="op">*</span><span class="kw">as.numeric</span>(n)<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)</a>
+<a class="sourceLine" id="cb3-46" title="46">  return_dataframe<span class="op">$</span>r &lt;-<span class="st"> </span>r_value</a>
+<a class="sourceLine" id="cb3-47" title="47">  <span class="co"># Seff</span></a>
+<a class="sourceLine" id="cb3-48" title="48">  return_dataframe<span class="op">$</span>Seff &lt;-<span class="st"> </span>(<span class="dv">149</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span><span class="op">/</span>return_dataframe<span class="op">$</span>r)<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="dv">1367</span></a>
+<a class="sourceLine" id="cb3-49" title="49">  <span class="co"># I_day</span></a>
+<a class="sourceLine" id="cb3-50" title="50">  return_dataframe<span class="op">$</span>I_day &lt;-<span class="st"> </span><span class="dv">435</span><span class="op">*</span>(<span class="dv">149</span><span class="op">*</span><span class="dv">10</span><span class="op">^</span><span class="dv">6</span><span class="op">/</span>return_dataframe<span class="op">$</span>r)<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(return_dataframe<span class="op">$</span>Hs<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span><span class="op">*</span><span class="kw">sin</span>(lat)<span class="op">*</span><span class="kw">sin</span>(return_dataframe<span class="op">$</span>declination<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)<span class="op">+</span><span class="kw">cos</span>(lat)<span class="op">*</span><span class="kw">cos</span>(return_dataframe<span class="op">$</span>declination<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)<span class="op">*</span><span class="kw">sin</span>(return_dataframe<span class="op">$</span>Hs<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>))</a>
+<a class="sourceLine" id="cb3-51" title="51">  <span class="co"># I</span></a>
+<a class="sourceLine" id="cb3-52" title="52">  return_dataframe<span class="op">$</span>I &lt;-<span class="st"> </span><span class="dv">1367</span><span class="op">*</span>(<span class="dv">149000000</span><span class="op">/</span>return_dataframe<span class="op">$</span>r)<span class="op">^</span><span class="dv">2</span><span class="op">*</span><span class="kw">cos</span>(return_dataframe<span class="op">$</span>Z<span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>)</a>
+<a class="sourceLine" id="cb3-53" title="53">  <span class="kw">return</span>(return_dataframe)</a>
+<a class="sourceLine" id="cb3-54" title="54">}</a>
+<a class="sourceLine" id="cb3-55" title="55"></a>
+<a class="sourceLine" id="cb3-56" title="56"></a>
+<a class="sourceLine" id="cb3-57" title="57"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-58" title="58"><span class="co"># Problem 1a)</span></a>
+<a class="sourceLine" id="cb3-59" title="59">doy &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">month=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">rep</span>(<span class="dv">2</span>,<span class="dv">28</span>),<span class="kw">rep</span>(<span class="dv">3</span>,<span class="dv">31</span>),<span class="kw">rep</span>(<span class="dv">4</span>,<span class="dv">30</span>),</a>
+<a class="sourceLine" id="cb3-60" title="60">                            <span class="kw">rep</span>(<span class="dv">5</span>,<span class="dv">31</span>),<span class="kw">rep</span>(<span class="dv">6</span>,<span class="dv">30</span>),<span class="kw">rep</span>(<span class="dv">7</span>,<span class="dv">31</span>),<span class="kw">rep</span>(<span class="dv">8</span>,<span class="dv">31</span>),</a>
+<a class="sourceLine" id="cb3-61" title="61">                            <span class="kw">rep</span>(<span class="dv">9</span>,<span class="dv">30</span>),<span class="kw">rep</span>(<span class="dv">10</span>,<span class="dv">31</span>),<span class="kw">rep</span>(<span class="dv">11</span>,<span class="dv">30</span>),<span class="kw">rep</span>(<span class="dv">12</span>,<span class="dv">31</span>)),</a>
+<a class="sourceLine" id="cb3-62" title="62">                    <span class="dt">day=</span><span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">28</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">30</span>),</a>
+<a class="sourceLine" id="cb3-63" title="63">                          <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">30</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),</a>
+<a class="sourceLine" id="cb3-64" title="64">                          <span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">30</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">30</span>),<span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">31</span>)),</a>
+<a class="sourceLine" id="cb3-65" title="65">                    <span class="dt">Seff=</span><span class="kw">rep</span>(<span class="ot">NA</span>,<span class="dv">365</span>))</a>
+<a class="sourceLine" id="cb3-66" title="66">  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(doy)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb3-67" title="67">    doy<span class="op">$</span>Seff[i] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2001</span>,doy<span class="op">$</span>month[i],doy<span class="op">$</span>day[i],<span class="dv">12</span>,<span class="dv">40</span>)<span class="op">$</span>Seff</a>
+<a class="sourceLine" id="cb3-68" title="68">  }</a>
+<a class="sourceLine" id="cb3-69" title="69">  <span class="kw">print</span>(<span class="kw">range</span>(doy<span class="op">$</span>Seff))</a>
+<a class="sourceLine" id="cb3-70" title="70">  <span class="kw">print</span>(<span class="kw">range</span>(doy<span class="op">$</span>Seff)<span class="op">/</span><span class="dv">1367</span>)</a>
+<a class="sourceLine" id="cb3-71" title="71"></a>
+<a class="sourceLine" id="cb3-72" title="72"></a>
+<a class="sourceLine" id="cb3-73" title="73"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-74" title="74"><span class="co"># Problem 1b)</span></a>
+<a class="sourceLine" id="cb3-75" title="75"><span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&#39;Maximum: &#39;</span>,<span class="kw">format</span>(<span class="kw">as.Date</span>(<span class="kw">paste0</span>(<span class="st">&#39;2001-&#39;</span>,</a>
+<a class="sourceLine" id="cb3-76" title="76">                                             doy<span class="op">$</span>month[<span class="kw">which.max</span>(doy<span class="op">$</span>Seff)],<span class="st">&#39;-&#39;</span>,</a>
+<a class="sourceLine" id="cb3-77" title="77">                                               doy<span class="op">$</span>day[<span class="kw">which.max</span>(doy<span class="op">$</span>Seff)])),</a>
+<a class="sourceLine" id="cb3-78" title="78">                                <span class="st">&quot;%B %d&quot;</span>)))</a>
+<a class="sourceLine" id="cb3-79" title="79"><span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&#39;Minimum: &#39;</span>,<span class="kw">format</span>(<span class="kw">as.Date</span>(<span class="kw">paste0</span>(<span class="st">&#39;2001-&#39;</span>,</a>
+<a class="sourceLine" id="cb3-80" title="80">                                               doy<span class="op">$</span>month[<span class="kw">which.min</span>(doy<span class="op">$</span>Seff)],</a>
+<a class="sourceLine" id="cb3-81" title="81">                                            <span class="st">&#39;-&#39;</span>,doy<span class="op">$</span>day[<span class="kw">which.min</span>(doy<span class="op">$</span>Seff)])),</a>
+<a class="sourceLine" id="cb3-82" title="82">                                <span class="st">&quot;%B %d&quot;</span>))) </a>
+<a class="sourceLine" id="cb3-83" title="83"></a>
+<a class="sourceLine" id="cb3-84" title="84"></a>
+<a class="sourceLine" id="cb3-85" title="85"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-86" title="86"><span class="co"># Problem 2)</span></a>
+<a class="sourceLine" id="cb3-87" title="87">Z_dates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;12-21&#39;</span>,<span class="st">&#39;02-05&#39;</span>,<span class="st">&#39;03-21&#39;</span>,<span class="st">&#39;06-21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-88" title="88">Z_lats &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">71</span>)</a>
+<a class="sourceLine" id="cb3-89" title="89">Z_df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">date=</span>Z_dates,<span class="dt">lat=</span>Z_lats)</a>
+<a class="sourceLine" id="cb3-90" title="90"></a>
+<a class="sourceLine" id="cb3-91" title="91"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(Z_df)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb3-92" title="92">  Zmonth &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(Z_df<span class="op">$</span>date[i],<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb3-93" title="93">  Zday &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(Z_df<span class="op">$</span>date[i],<span class="dv">4</span>,<span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb3-94" title="94">  Zlat &lt;-<span class="st"> </span>Z_df<span class="op">$</span>lat[i]</a>
+<a class="sourceLine" id="cb3-95" title="95">  Z_df<span class="op">$</span>Z[i] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2018</span>,Zmonth,Zday,<span class="dv">12</span>,Zlat)<span class="op">$</span>Z</a>
+<a class="sourceLine" id="cb3-96" title="96">}</a>
+<a class="sourceLine" id="cb3-97" title="97">Z_df &lt;-<span class="st"> </span><span class="kw">dcast</span>(Z_df,lat<span class="op">~</span>date,<span class="dt">value.var=</span><span class="st">&#39;Z&#39;</span>)</a>
+<a class="sourceLine" id="cb3-98" title="98">Z_df &lt;-<span class="st"> </span>Z_df[,<span class="op">-</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb3-99" title="99"><span class="kw">rownames</span>(Z_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Honolulu, HI (21 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-100" title="100">                    <span class="st">&#39;Boulder, CO (40 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-101" title="101">                    <span class="st">&#39;Oslo, Norway (60 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-102" title="102">                    <span class="st">&#39;Barrow, AK (71 N)&#39;</span>)</a>
+<a class="sourceLine" id="cb3-103" title="103"><span class="kw">colnames</span>(Z_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Dec. 21&#39;</span>,<span class="st">&#39;Feb. 5&#39;</span>,<span class="st">&#39;Mar. 21&#39;</span>,<span class="st">&#39;June 21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-104" title="104">knitr<span class="op">::</span><span class="kw">kable</span>(Z_df)</a>
+<a class="sourceLine" id="cb3-105" title="105"></a>
+<a class="sourceLine" id="cb3-106" title="106"></a>
+<a class="sourceLine" id="cb3-107" title="107"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-108" title="108"><span class="co"># Problem 3)</span></a>
+<a class="sourceLine" id="cb3-109" title="109">I_dates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;12-21&#39;</span>,<span class="st">&#39;02-05&#39;</span>,<span class="st">&#39;03-21&#39;</span>,<span class="st">&#39;06-21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-110" title="110">I_lats &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">71</span>)</a>
+<a class="sourceLine" id="cb3-111" title="111">I_df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">date=</span>I_dates,<span class="dt">lat=</span>I_lats)</a>
+<a class="sourceLine" id="cb3-112" title="112"></a>
+<a class="sourceLine" id="cb3-113" title="113"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(I_df)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb3-114" title="114">  Imonth &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(I_df<span class="op">$</span>date[i],<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb3-115" title="115">  Iday &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(I_df<span class="op">$</span>date[i],<span class="dv">4</span>,<span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb3-116" title="116">  Ilat &lt;-<span class="st"> </span>I_df<span class="op">$</span>lat[i]</a>
+<a class="sourceLine" id="cb3-117" title="117">  I_df<span class="op">$</span>I[i] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2018</span>,Imonth,Iday,<span class="dv">12</span>,Ilat)<span class="op">$</span>I</a>
+<a class="sourceLine" id="cb3-118" title="118">}</a>
+<a class="sourceLine" id="cb3-119" title="119">I_df &lt;-<span class="st"> </span><span class="kw">dcast</span>(I_df,lat<span class="op">~</span>date,<span class="dt">value.var=</span><span class="st">&#39;I&#39;</span>)</a>
+<a class="sourceLine" id="cb3-120" title="120">I_df &lt;-<span class="st"> </span>I_df[,<span class="op">-</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb3-121" title="121"><span class="kw">rownames</span>(I_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Honolulu, HI (21 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-122" title="122">                    <span class="st">&#39;Boulder, CO (40 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-123" title="123">                    <span class="st">&#39;Oslo, Norway (60 N)&#39;</span>,</a>
+<a class="sourceLine" id="cb3-124" title="124">                    <span class="st">&#39;Barrow, AK (71 N)&#39;</span>)</a>
+<a class="sourceLine" id="cb3-125" title="125"><span class="kw">colnames</span>(I_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Dec. 21&#39;</span>,<span class="st">&#39;Feb. 5&#39;</span>,<span class="st">&#39;Mar. 21&#39;</span>,<span class="st">&#39;June 21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-126" title="126"><span class="kw">kable</span>(I_df)</a>
+<a class="sourceLine" id="cb3-127" title="127"></a>
+<a class="sourceLine" id="cb3-128" title="128"></a>
+<a class="sourceLine" id="cb3-129" title="129"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-130" title="130"><span class="co"># Problem 4)</span></a>
+<a class="sourceLine" id="cb3-131" title="131">I_dates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;12-21&#39;</span>,<span class="st">&#39;02-05&#39;</span>,<span class="st">&#39;03-21&#39;</span>,<span class="st">&#39;06-21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-132" title="132">I_lats &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">21</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">71</span>)</a>
+<a class="sourceLine" id="cb3-133" title="133">I_df &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">date=</span>I_dates,<span class="dt">lat=</span>I_lats)</a>
+<a class="sourceLine" id="cb3-134" title="134"></a>
+<a class="sourceLine" id="cb3-135" title="135"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(I_df)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb3-136" title="136">  Imonth &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(I_df<span class="op">$</span>date[i],<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb3-137" title="137">  Iday &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">substr</span>(I_df<span class="op">$</span>date[i],<span class="dv">4</span>,<span class="dv">5</span>))</a>
+<a class="sourceLine" id="cb3-138" title="138">  Ilat &lt;-<span class="st"> </span>I_df<span class="op">$</span>lat[i]</a>
+<a class="sourceLine" id="cb3-139" title="139">  I_df<span class="op">$</span>Hs[i] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2002</span>,Imonth,Iday,<span class="dv">12</span>,Ilat)<span class="op">$</span>Hs</a>
+<a class="sourceLine" id="cb3-140" title="140">  I_df<span class="op">$</span>I_day[i] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2002</span>,Imonth,Iday,<span class="dv">12</span>,Ilat)<span class="op">$</span>I_day</a>
+<a class="sourceLine" id="cb3-141" title="141">}</a>
+<a class="sourceLine" id="cb3-142" title="142"></a>
+<a class="sourceLine" id="cb3-143" title="143">I_df<span class="op">$</span>Hs &lt;-<span class="st"> </span>I_df<span class="op">$</span>Hs<span class="op">*</span><span class="dv">2</span><span class="op">/</span><span class="dv">15</span></a>
+<a class="sourceLine" id="cb3-144" title="144"></a>
+<a class="sourceLine" id="cb3-145" title="145">Hs_df &lt;-<span class="st"> </span><span class="kw">dcast</span>(I_df,lat<span class="op">~</span>date,<span class="dt">value.var=</span><span class="st">&#39;Hs&#39;</span>)</a>
+<a class="sourceLine" id="cb3-146" title="146"><span class="kw">colnames</span>(Hs_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;lat&#39;</span>,<span class="st">&#39;Dec. 21&#39;</span>,<span class="st">&#39;Feb. 5&#39;</span>,<span class="st">&#39;Mar. 21&#39;</span>,<span class="st">&#39;June 21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-147" title="147"></a>
+<a class="sourceLine" id="cb3-148" title="148">Iday_df &lt;-<span class="st"> </span><span class="kw">dcast</span>(I_df,lat<span class="op">~</span>date,<span class="dt">value.var=</span><span class="st">&#39;I_day&#39;</span>)</a>
+<a class="sourceLine" id="cb3-149" title="149"><span class="kw">colnames</span>(Iday_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;lat&#39;</span>,<span class="st">&#39;Dec. 21&#39;</span>,<span class="st">&#39;Feb. 5&#39;</span>,<span class="st">&#39;Mar. 21&#39;</span>,<span class="st">&#39;June 21&#39;</span>)</a>
+<a class="sourceLine" id="cb3-150" title="150"></a>
+<a class="sourceLine" id="cb3-151" title="151">combined_df &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(Hs_df,Iday_df) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-152" title="152"><span class="st">  </span><span class="kw">arrange</span>(lat)</a>
+<a class="sourceLine" id="cb3-153" title="153">combined_df &lt;-<span class="st"> </span>combined_df[,<span class="op">-</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb3-154" title="154"><span class="kw">rownames</span>(combined_df) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Honolulu, HI (21 N) day length&#39;</span>,</a>
+<a class="sourceLine" id="cb3-155" title="155">                           <span class="st">&#39;Honolulu, HI (21 N) daily avg solar&#39;</span>,</a>
+<a class="sourceLine" id="cb3-156" title="156">                           <span class="st">&#39;Boulder, CO (40 N) day length&#39;</span>,</a>
+<a class="sourceLine" id="cb3-157" title="157">                           <span class="st">&#39;Boulder, CO (40 N) daily avg solar&#39;</span>,</a>
+<a class="sourceLine" id="cb3-158" title="158">                           <span class="st">&#39;Oslo, Norway (60 N) day length&#39;</span>,</a>
+<a class="sourceLine" id="cb3-159" title="159">                           <span class="st">&#39;Oslo, Norway (60 N) daily avg solar&#39;</span>,</a>
+<a class="sourceLine" id="cb3-160" title="160">                           <span class="st">&#39;Barrow, AK (71 N) day length&#39;</span>,</a>
+<a class="sourceLine" id="cb3-161" title="161">                           <span class="st">&#39;Barrow, AK (71 N) daily avg solar&#39;</span>)</a>
+<a class="sourceLine" id="cb3-162" title="162"><span class="kw">kable</span>(combined_df)</a>
+<a class="sourceLine" id="cb3-163" title="163"></a>
+<a class="sourceLine" id="cb3-164" title="164"></a>
+<a class="sourceLine" id="cb3-165" title="165"><span class="co">## ------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb3-166" title="166"><span class="co"># Problem 5)</span></a>
+<a class="sourceLine" id="cb3-167" title="167">diurnal_I &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Hour=</span><span class="kw">rep</span>(<span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">24</span>),<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb3-168" title="168">                        <span class="dt">Insolation=</span><span class="kw">rep</span>(<span class="ot">NA</span>,<span class="dv">50</span>),</a>
+<a class="sourceLine" id="cb3-169" title="169">                        <span class="dt">City=</span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&#39;Boulder&#39;</span>,<span class="st">&#39;Barrow&#39;</span>),<span class="dt">each=</span><span class="dv">25</span>))</a>
+<a class="sourceLine" id="cb3-170" title="170"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">dim</span>(I_df)[<span class="dv">1</span>]){</a>
+<a class="sourceLine" id="cb3-171" title="171">  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">25</span>){</a>
+<a class="sourceLine" id="cb3-172" title="172">    diurnal_I<span class="op">$</span>Insolation[j] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2002</span>,<span class="dv">6</span>,<span class="dv">21</span>,</a>
+<a class="sourceLine" id="cb3-173" title="173">                                            diurnal_I<span class="op">$</span>Hour[j],<span class="dv">40</span>)<span class="op">$</span>I</a>
+<a class="sourceLine" id="cb3-174" title="174">    diurnal_I<span class="op">$</span>Insolation[j<span class="op">+</span><span class="dv">25</span>] &lt;-<span class="st"> </span><span class="kw">toa_radiation</span>(<span class="dv">2002</span>,<span class="dv">6</span>,<span class="dv">21</span>,</a>
+<a class="sourceLine" id="cb3-175" title="175">                                            diurnal_I<span class="op">$</span>Hour[j],<span class="dv">71</span>)<span class="op">$</span>I</a>
+<a class="sourceLine" id="cb3-176" title="176">  }</a>
+<a class="sourceLine" id="cb3-177" title="177">}</a>
+<a class="sourceLine" id="cb3-178" title="178">diurnal_I<span class="op">$</span>Insolation[<span class="kw">which</span>(diurnal_I<span class="op">$</span>Insolation<span class="op">&lt;</span><span class="dv">0</span>)] &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-179" title="179"></a>
+<a class="sourceLine" id="cb3-180" title="180"><span class="kw">ggplot</span>(diurnal_I,<span class="kw">aes</span>(<span class="dt">x=</span>Hour,<span class="dt">y=</span>Insolation,<span class="dt">color=</span>City)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-181" title="181"><span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">group=</span>City)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-182" title="182"><span class="st">  </span><span class="kw">ylab</span>(<span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">&#39;Hourly Solar Insolation, &#39;</span>,<span class="kw">over</span>(W,m<span class="op">^</span><span class="dv">2</span>)))) <span class="op">+</span></a>
+<a class="sourceLine" id="cb3-183" title="183"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&#39;Diurnal Cycle of Incoming Solar Radiation&#39;</span>)</a>
+<a class="sourceLine" id="cb3-184" title="184"></a>
+<a class="sourceLine" id="cb3-185" title="185"></a>
+<a class="sourceLine" id="cb3-186" title="186"><span class="co">## ----code = readLines(knitr::purl(&quot;C:/Users/seanm/Desktop/R-Tutorial/Notebook Example.Rmd&quot;, documentation = 1)), echo = T, eval = F----</span></a>
+<a class="sourceLine" id="cb3-187" title="187"><span class="co">## NA</span></a></code></pre></div>
+
+</body>
+</html>
