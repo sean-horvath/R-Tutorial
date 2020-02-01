@@ -3,8 +3,7 @@ title: "R Markdown Example"
 author: "Sean Horvath"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  html_document: default
-  pdf_document: default
+  github_document
 subtitle: Solar Radiation
 ---
 
